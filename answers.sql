@@ -1,4 +1,4 @@
-create database bookstore;
+
 use bookstore;
 -- A list of all books available in the store.
 CREATE TABLE book (

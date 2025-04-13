@@ -123,3 +123,19 @@ A unique identifier for each record in a table. No duplicates allowed.
 
 ## FK = Foreign Key
 A reference to a primary key in another table, used to establish relationships between tables.
+
+## Table Schema
+🧱 Table Schema
+The full database structure, including all tables, primary keys, foreign keys, and data types, is defined in the SQL schema file below:
+
+👉 📄 View the Table Schema (https://drive.google.com/file/d/1V-8TEsPUC6ruyWt2R1M2Ppo0sWzMOAov/view?usp=sharing)
+
+## 👥 Collaborators
+This project was completed as a group assignment for the Bookstore Database Design project.
+
+## 🧑‍💻 Team Members:
+Mwarish – Creating tables with the optimal schema and data types for the dataset 📊
+
+Malehek – Designing and implementing a MySQL database for a real-world use case 🧾
+
+Ronald – Managing database access through user groups and roles to ensure security 📝

@@ -84,6 +84,10 @@ order_date      DATETIME
 status_id       INT (FK → order_status)
 shipping_method_id INT (FK → shipping_method)
 
+view customer order
+![customer order](custOrder.png>)
+
+
 ## 12. 🧾 order_line
 A list of books that are part of each order.
 
@@ -113,6 +117,9 @@ A list of possible statuses for an order (e.g., pending, shipped, delivered).
 
 status_id       INT PRIMARY KEY
 status_name     VARCHAR(50) -- e.g. pending, shipped
+
+order status table
+![table schema](<orderstatus.PNG>)
 
 
 ## 📌 Notes

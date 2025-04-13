@@ -144,5 +144,51 @@ CREATE TABLE order_status (
 );
 
 show tables;
+CREATE ROLE bookstore_admin;
+CREATE ROLE bookstore_staff;
+CREATE ROLE bookstore_customer;
+GRANT ALL PRIVILEGES ON bookstore.* TO bookstore_admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.book TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.book_author TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.author TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.book_language TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.publisher TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.cust_order TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.order_line TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.order_history TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.order_status TO bookstore_staff;
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstore.shipping_method TO bookstore_staff;
+
+GRANT SELECT ON bookstore.customer TO bookstore_staff;
+GRANT SELECT ON bookstore.customer_address TO bookstore_staff;
+GRANT SELECT ON bookstore.address TO bookstore_staff;
+
+GRANT SELECT ON bookstore.country TO bookstore_staff;
+-- bookstore_customer:
+GRANT SELECT ON bookstore.book TO bookstore_customer; 
+GRANT SELECT ON bookstore.author TO bookstore_customer; 
+GRANT SELECT ON bookstore.book_author TO bookstore_customer; 
+GRANT SELECT ON bookstore.book_language TO bookstore_customer;
+GRANT SELECT ON bookstore.publisher TO bookstore_customer;
+GRANT SELECT, INSERT, UPDATE ON bookstore.customer TO bookstore_customer;
+GRANT SELECT, INSERT, UPDATE ON bookstore.customer_address TO bookstore_customer;
+GRANT SELECT, INSERT ON bookstore.cust_order TO bookstore_customer; 
+GRANT SELECT, INSERT ON bookstore.order_line TO bookstore_customer; 
+GRANT SELECT ON bookstore.order_history TO bookstore_customer; 
+GRANT SELECT ON bookstore.order_status TO bookstore_customer; 
+GRANT SELECT ON bookstore.shipping_method TO bookstore_customer; 
+GRANT SELECT, INSERT ON bookstore.address TO bookstore_customer; 
+GRANT SELECT ON bookstore.address_status TO bookstore_customer; 
 
 
+-- Create users and assign roles
+CREATE USER 'admin'@'localhost' IDENTIFIED BY '1234';
+CREATE USER 'staff'@'localhost' IDENTIFIED BY '234';
+CREATE USER 'customer'@'localhost' IDENTIFIED BY '3434';
+
+GRANT bookstore_admin TO 'admin'@'localhost';
+GRANT bookstore_staff TO 'staff'@'localhost';
+GRANT bookstore_customer TO 'customer'@'localhost';
+
+-- Ensure privileges are applied
+FLUSH PRIVILEGES;

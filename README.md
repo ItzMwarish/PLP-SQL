@@ -85,7 +85,7 @@ status_id       INT (FK → order_status)
 shipping_method_id INT (FK → shipping_method)
 
 view customer order
-![customer order](custOrder.png>)
+![customer order](custOrder.png)
 
 
 ## 12. 🧾 order_line
@@ -119,7 +119,7 @@ status_id       INT PRIMARY KEY
 status_name     VARCHAR(50) -- e.g. pending, shipped
 
 order status table
-![table schema](<orderstatus.PNG>)
+![order status](orderstatus.PNG)
 
 
 ## 📌 Notes

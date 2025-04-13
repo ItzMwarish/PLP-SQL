@@ -128,7 +128,9 @@ A reference to a primary key in another table, used to establish relationships b
 🧱 Table Schema
 The full database structure, including all tables, primary keys, foreign keys, and data types, is defined in the SQL schema file below:
 
-👉 📄 View the Table Schema (https://drive.google.com/file/d/1V-8TEsPUC6ruyWt2R1M2Ppo0sWzMOAov/view?usp=sharing)
+👉 📄 View the Table Schema 
+
+![table schema](<teble schema-1.PNG>)
 
 ## 👥 Collaborators
 This project was completed as a group assignment for the Bookstore Database Design project.
